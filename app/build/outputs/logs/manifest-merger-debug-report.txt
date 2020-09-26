@@ -1,0 +1,123 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:2:1-28:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\3888b76ca1d3233026c2f5cad8877075\appcompat-v7-27.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\a65c03b57a0caa425465ef6e2b642e63\constraint-layout-1.1.3\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\34b522c8855e0c73cf9effc4a9a32013\support-fragment-27.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\8620ba8927b39a6d291db6ea05c53d76\animated-vector-drawable-27.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\bf9b5a52845b8771aff5fabdecdcc03d\support-core-ui-27.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\beeb82b2510e87c5231b2c828dbda485\support-core-utils-27.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\d8d452f44ab125f201933d0870752fbc\support-vector-drawable-27.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\222ad3875af524dbeddaea9e092a0d60\support-compat-27.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\eb11e490220b2b77e71b21d47a6ef261\livedata-core-1.1.0\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\555b39dad4a9593ee5ac0435517d4a05\viewmodel-1.1.0\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\115e96da560aef7a1eded67ff187307e\runtime-1.1.0\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\f3d8400d34d44a28d45a1ffcf10f060c\runtime-1.1.0\AndroidManifest.xml:17:1-22:12
+INJECTED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:2:1-28:12
+	package
+		ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:3:5-31
+		INJECTED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml
+		INJECTED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml
+		ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:2:1-28:12
+		INJECTED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml
+		ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:2:1-28:12
+		INJECTED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:5:5-79
+	android:name
+		ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:5:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:6:5-80
+	android:name
+		ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:6:22-78
+uses-permission#android.permission.CAMERA
+ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:7:5-64
+	android:name
+		ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:7:22-62
+application
+ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:8:5-26:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\a65c03b57a0caa425465ef6e2b642e63\constraint-layout-1.1.3\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\a65c03b57a0caa425465ef6e2b642e63\constraint-layout-1.1.3\AndroidManifest.xml:9:5-20
+	android:supportsRtl
+		ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:13:9-35
+	android:label
+		ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:11:9-41
+	android:roundIcon
+		ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:12:9-54
+	android:icon
+		ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:10:9-43
+	android:allowBackup
+		ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:9:9-35
+	android:theme
+		ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:14:9-40
+activity#com.wzh.yuvwater.MainActivity
+ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:15:9-24:20
+	android:screenOrientation
+		ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:17:13-50
+	android:configChanges
+		ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:16:13-113
+	android:name
+		ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:15:19-47
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:19:13-23:29
+action#android.intent.action.MAIN
+ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:20:17-69
+	android:name
+		ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:20:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:22:17-77
+	android:name
+		ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:22:27-74
+activity#com.wzh.yuvwater.CreateNumberAct
+ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:25:9-52
+	android:name
+		ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml:25:19-50
+uses-sdk
+INJECTED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml
+INJECTED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\3888b76ca1d3233026c2f5cad8877075\appcompat-v7-27.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\3888b76ca1d3233026c2f5cad8877075\appcompat-v7-27.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\a65c03b57a0caa425465ef6e2b642e63\constraint-layout-1.1.3\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\a65c03b57a0caa425465ef6e2b642e63\constraint-layout-1.1.3\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\34b522c8855e0c73cf9effc4a9a32013\support-fragment-27.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\34b522c8855e0c73cf9effc4a9a32013\support-fragment-27.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\8620ba8927b39a6d291db6ea05c53d76\animated-vector-drawable-27.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\8620ba8927b39a6d291db6ea05c53d76\animated-vector-drawable-27.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\bf9b5a52845b8771aff5fabdecdcc03d\support-core-ui-27.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\bf9b5a52845b8771aff5fabdecdcc03d\support-core-ui-27.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\beeb82b2510e87c5231b2c828dbda485\support-core-utils-27.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\beeb82b2510e87c5231b2c828dbda485\support-core-utils-27.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\d8d452f44ab125f201933d0870752fbc\support-vector-drawable-27.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\d8d452f44ab125f201933d0870752fbc\support-vector-drawable-27.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\222ad3875af524dbeddaea9e092a0d60\support-compat-27.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\222ad3875af524dbeddaea9e092a0d60\support-compat-27.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\eb11e490220b2b77e71b21d47a6ef261\livedata-core-1.1.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\eb11e490220b2b77e71b21d47a6ef261\livedata-core-1.1.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\555b39dad4a9593ee5ac0435517d4a05\viewmodel-1.1.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\555b39dad4a9593ee5ac0435517d4a05\viewmodel-1.1.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\115e96da560aef7a1eded67ff187307e\runtime-1.1.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\115e96da560aef7a1eded67ff187307e\runtime-1.1.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\f3d8400d34d44a28d45a1ffcf10f060c\runtime-1.1.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\lijun\.gradle\caches\transforms-2\files-2.1\f3d8400d34d44a28d45a1ffcf10f060c\runtime-1.1.0\AndroidManifest.xml:20:5-44
+INJECTED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml
+INJECTED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml
+		ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml
+		INJECTED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml
+		ADDED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml
+		INJECTED from E:\androiddemo\YuvWater-master\YuvWater-master\app\src\main\AndroidManifest.xml

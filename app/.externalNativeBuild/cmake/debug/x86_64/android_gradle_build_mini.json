@@ -1,0 +1,17 @@
+{
+  "buildFiles": [
+    "/Users/admin/Documents/Work_LJ/YuvWater-master/app/CMakeLists.txt",
+    "/Library/android-sdks/ndk-bundle/build/cmake/android.toolchain.cmake"
+  ],
+  "cleanCommands": [
+    "/Library/android-sdks/cmake/3.10.2.4988404/bin/cmake --build /Users/admin/Documents/Work_LJ/YuvWater-master/app/.externalNativeBuild/cmake/debug/x86_64 --target clean"
+  ],
+  "libraries": {
+    "YuvOsdUtils-Debug-x86_64": {
+      "artifactName": "YuvOsdUtils",
+      "buildCommand": "/Library/android-sdks/cmake/3.10.2.4988404/bin/cmake --build /Users/admin/Documents/Work_LJ/YuvWater-master/app/.externalNativeBuild/cmake/debug/x86_64 --target YuvOsdUtils",
+      "abi": "x86_64",
+      "output": "/Users/admin/Documents/Work_LJ/YuvWater-master/app/build/intermediates/cmake/debug/obj/x86_64/libYuvOsdUtils.so"
+    }
+  }
+}

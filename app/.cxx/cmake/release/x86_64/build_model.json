@@ -1,0 +1,210 @@
+{
+  "abi": "X86_64",
+  "abiPlatformVersion": 21,
+  "buildSettings": {
+    "environmentVariables": []
+  },
+  "cmake": {
+    "cmakeArtifactsBaseFolder": "E:\\androiddemo\\YuvWater-master\\YuvWater-master\\app\\.cxx\\cmake\\release\\x86_64",
+    "cmakeServerLogFile": "E:\\androiddemo\\YuvWater-master\\YuvWater-master\\app\\.cxx\\cmake\\release\\x86_64\\cmake_server_log.txt",
+    "cmakeWrappingBaseFolder": "E:\\androiddemo\\YuvWater-master\\YuvWater-master\\app\\.cxx\\cxx\\release\\x86_64",
+    "effectiveConfiguration": {
+      "name": "traditional-android-studio-cmake-environment",
+      "description": "Composite reified CMakeSettings configuration",
+      "generator": "Ninja",
+      "inheritEnvironments": [
+        "ndk"
+      ],
+      "buildRoot": "E:\\androiddemo\\YuvWater-master\\YuvWater-master\\app\\.cxx\\cmake\\release\\x86_64",
+      "cmakeToolchain": "D:\\AndroidSDK\\ndk-bundle\\build\\cmake\\android.toolchain.cmake",
+      "cmakeExecutable": "D:\\AndroidSDK\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
+      "variables": [
+        {
+          "name": "CMAKE_CXX_FLAGS",
+          "value": "-std\u003dc++11"
+        },
+        {
+          "name": "CMAKE_FIND_ROOT_PATH",
+          "value": "E:\\androiddemo\\YuvWater-master\\YuvWater-master\\app\\.cxx\\cmake\\release\\prefab\\x86_64\\prefab"
+        },
+        {
+          "name": "CMAKE_BUILD_TYPE",
+          "value": "Release"
+        },
+        {
+          "name": "CMAKE_TOOLCHAIN_FILE",
+          "value": "D:\\AndroidSDK\\ndk-bundle\\build\\cmake\\android.toolchain.cmake"
+        },
+        {
+          "name": "ANDROID_ABI",
+          "value": "x86_64"
+        },
+        {
+          "name": "ANDROID_NDK",
+          "value": "D:\\AndroidSDK\\ndk-bundle"
+        },
+        {
+          "name": "ANDROID_PLATFORM",
+          "value": "android-21"
+        },
+        {
+          "name": "CMAKE_ANDROID_ARCH_ABI",
+          "value": "x86_64"
+        },
+        {
+          "name": "CMAKE_ANDROID_NDK",
+          "value": "D:\\AndroidSDK\\ndk-bundle"
+        },
+        {
+          "name": "CMAKE_EXPORT_COMPILE_COMMANDS",
+          "value": "ON"
+        },
+        {
+          "name": "CMAKE_LIBRARY_OUTPUT_DIRECTORY",
+          "value": "E:\\androiddemo\\YuvWater-master\\YuvWater-master\\app\\build\\intermediates\\cmake\\release\\obj\\x86_64"
+        },
+        {
+          "name": "CMAKE_MAKE_PROGRAM",
+          "value": "D:\\AndroidSDK\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
+        },
+        {
+          "name": "CMAKE_SYSTEM_NAME",
+          "value": "Android"
+        },
+        {
+          "name": "CMAKE_SYSTEM_VERSION",
+          "value": "21"
+        }
+      ]
+    }
+  },
+  "cxxBuildFolder": "E:\\androiddemo\\YuvWater-master\\YuvWater-master\\app\\.cxx\\cmake\\release\\x86_64",
+  "info": {
+    "abi": "X86_64",
+    "bitness": 64,
+    "deprecated": false,
+    "default": true
+  },
+  "originalCxxBuildFolder": "E:\\androiddemo\\YuvWater-master\\YuvWater-master\\app\\.cxx\\cmake\\release\\x86_64",
+  "variant": {
+    "buildSystemArgumentList": [],
+    "buildTargetSet": [],
+    "cFlagsList": [],
+    "cmakeSettingsConfiguration": "android-gradle-plugin-predetermined-name",
+    "cppFlagsList": [
+      "-std\u003dc++11"
+    ],
+    "isDebuggableEnabled": false,
+    "module": {
+      "buildSystem": "CMAKE",
+      "cmake": {
+        "cmakeExe": "D:\\AndroidSDK\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
+        "minimumCmakeVersion": "3.10.2",
+        "ninjaExe": "D:\\AndroidSDK\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
+      },
+      "cmakeToolchainFile": "D:\\AndroidSDK\\ndk-bundle\\build\\cmake\\android.toolchain.cmake",
+      "cxxFolder": "E:\\androiddemo\\YuvWater-master\\YuvWater-master\\app\\.cxx",
+      "gradleModulePathName": ":app",
+      "intermediatesFolder": "E:\\androiddemo\\YuvWater-master\\YuvWater-master\\app\\build\\intermediates",
+      "makeFile": "E:\\androiddemo\\YuvWater-master\\YuvWater-master\\app\\CMakeLists.txt",
+      "moduleBuildFile": "E:\\androiddemo\\YuvWater-master\\YuvWater-master\\app\\build.gradle",
+      "moduleRootFolder": "E:\\androiddemo\\YuvWater-master\\YuvWater-master\\app",
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkFolder": "D:\\AndroidSDK\\ndk-bundle",
+      "ndkMetaAbiList": [
+        {
+          "abi": "ARMEABI_V7A",
+          "bitness": 32,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "ARM64_V8A",
+          "bitness": 64,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "X86",
+          "bitness": 32,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "X86_64",
+          "bitness": 64,
+          "deprecated": false,
+          "default": true
+        }
+      ],
+      "ndkMetaPlatforms": {
+        "min": 16,
+        "max": 30,
+        "aliases": {
+          "20": 19,
+          "25": 24,
+          "J": 16,
+          "J-MR1": 17,
+          "J-MR2": 18,
+          "K": 19,
+          "L": 21,
+          "L-MR1": 22,
+          "M": 23,
+          "N": 24,
+          "N-MR1": 24,
+          "O": 26,
+          "O-MR1": 27,
+          "P": 28,
+          "Q": 29,
+          "R": 30
+        }
+      },
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultStl": "LIBCXX_STATIC",
+      "ndkVersion": "21.3.6528147",
+      "project": {
+        "compilerSettingsCacheFolder": "E:\\androiddemo\\YuvWater-master\\YuvWater-master\\.cxx",
+        "cxxFolder": "E:\\androiddemo\\YuvWater-master\\YuvWater-master\\.cxx",
+        "isBuildOnlyTargetAbiEnabled": true,
+        "isCmakeBuildCohabitationEnabled": false,
+        "isNativeCompilerSettingsCacheEnabled": false,
+        "rootBuildGradleFolder": "E:\\androiddemo\\YuvWater-master\\YuvWater-master",
+        "sdkFolder": "D:\\AndroidSDK",
+        "isPrefabEnabled": false
+      },
+      "splitsAbiFilterSet": [],
+      "stlSharedObjectMap": {
+        "LIBCXX_SHARED": {
+          "ARMEABI_V7A": "D:\\AndroidSDK\\ndk-bundle\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\arm-linux-androideabi\\libc++_shared.so",
+          "ARM64_V8A": "D:\\AndroidSDK\\ndk-bundle\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\aarch64-linux-android\\libc++_shared.so",
+          "X86": "D:\\AndroidSDK\\ndk-bundle\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\i686-linux-android\\libc++_shared.so",
+          "X86_64": "D:\\AndroidSDK\\ndk-bundle\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\x86_64-linux-android\\libc++_shared.so"
+        },
+        "LIBCXX_STATIC": {},
+        "NONE": {},
+        "SYSTEM": {}
+      }
+    },
+    "objFolder": "E:\\androiddemo\\YuvWater-master\\YuvWater-master\\app\\build\\intermediates\\cmake\\release\\obj",
+    "variantName": "release",
+    "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
+    ],
+    "prefabDirectory": "E:\\androiddemo\\YuvWater-master\\YuvWater-master\\app\\.cxx\\cmake\\release\\prefab",
+    "prefabPackageDirectoryList": []
+  },
+  "prefabFolder": "E:\\androiddemo\\YuvWater-master\\YuvWater-master\\app\\.cxx\\cmake\\release\\prefab\\x86_64"
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "level": "INFO",
+    "message": "android.ndkVersion from module build.gradle is not set"
+  },
+  {
+    "level": "INFO",
+    "message": "ndk.dir in local.properties is /Library/android-sdks/ndk-bundle"
+  },
+  {
+    "level": "INFO",
+    "message": "ANDROID_NDK_HOME environment variable is not set"
+  },
+  {
+    "level": "INFO",
+    "message": "sdkFolder is D:\\AndroidSDK"
+  },
+  {
+    "level": "INFO",
+    "message": "NDK side-by-side folder from sdkFolder D:\\AndroidSDK\\ndk does not exist"
+  },
+  {
+    "level": "INFO",
+    "message": "Considering \\Library\\android-sdks\\ndk-bundle by ndk.dir"
+  },
+  {
+    "level": "INFO",
+    "message": "Considering D:\\AndroidSDK\\ndk-bundle in SDK ndk-bundle folder"
+  },
+  {
+    "level": "INFO",
+    "message": "Rejected \\Library\\android-sdks\\ndk-bundle by ndk.dir because that location has no source.properties"
+  },
+  {
+    "level": "ERROR",
+    "message": "Location specified by ndk.dir (/Library/android-sdks/ndk-bundle) did not contain a valid NDK and and couldn\u0027t be used"
+  },
+  {
+    "level": "INFO",
+    "message": "Using D:\\AndroidSDK\\ndk-bundle which is version 21.3.6528147 as fallback but build will fail"
+  }
+]

@@ -1,0 +1,7 @@
+Executable : D:\AndroidSDK\cmake\3.10.2.4988404\bin\ninja.exe
+arguments : 
+-C
+E:\androiddemo\YuvWater-master\YuvWater-master\app\.cxx\cmake\debug\armeabi-v7a
+YuvOsdUtils
+jvmArgs : 
+

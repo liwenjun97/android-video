@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "D:\\AndroidSDK\\ndk-bundle\\build\\cmake\\platforms.cmake",
+    "D:\\AndroidSDK\\ndk-bundle\\build\\cmake\\android.toolchain.cmake",
+    "E:\\androiddemo\\YuvWater-master\\YuvWater-master\\app\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "D:\\AndroidSDK\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"E:\\androiddemo\\YuvWater-master\\YuvWater-master\\app\\.cxx\\cmake\\release\\arm64-v8a\" clean"
+  ],
+  "buildTargetsCommand": "D:\\AndroidSDK\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"E:\\androiddemo\\YuvWater-master\\YuvWater-master\\app\\.cxx\\cmake\\release\\arm64-v8a\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "YuvOsdUtils-Release-arm64-v8a": {
+      "artifactName": "YuvOsdUtils",
+      "buildCommand": "D:\\AndroidSDK\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"E:\\androiddemo\\YuvWater-master\\YuvWater-master\\app\\.cxx\\cmake\\release\\arm64-v8a\" YuvOsdUtils",
+      "abi": "arm64-v8a",
+      "output": "E:\\androiddemo\\YuvWater-master\\YuvWater-master\\app\\build\\intermediates\\cmake\\release\\obj\\arm64-v8a\\libYuvOsdUtils.so",
+      "runtimeFiles": []
+    }
+  }
+}
