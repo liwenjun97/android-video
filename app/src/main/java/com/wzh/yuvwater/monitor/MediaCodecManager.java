@@ -146,19 +146,20 @@ class MediaCodecManager {
 
     public void releaseManager() {
         Logger1.i(TAG,"releaseManager");
-        if(mMediaCodec != null){
-            Logger1.i(TAG,"releaseManager ----2");
-        }
-
-            if(mMediaCodec!=null){
-                Logger1.i(TAG,"releaseManager----3");
-                frameBytes.clear();
-                YuvOsdUtils.releaseOsd();
-                stopMediaCodec();
-                sInstance=null;
-                mHandlerThread.quit();
+        Thread th = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                if (mMediaCodec != null) {
+                    Logger1.i(TAG, "releaseManager----3");
+                    frameBytes.clear();
+                    YuvOsdUtils.releaseOsd();
+                    stopMediaCodec();
+                    sInstance = null;
+                    mHandlerThread.quit();
+                }
             }
-
+        });
+        th.start();
     }
 
     public void addFrameData(byte[] data) {
