@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/Users/admin/Documents/Work_LJ/YuvWater-master/app/.externalNativeBuild/cmake/debug/armeabi-v7a",
-  "command": "/Library/android-sdks/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=armv7-none-linux-androideabi --gcc-toolchain=/Library/android-sdks/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64 --sysroot=/Library/android-sdks/ndk-bundle/sysroot -DYuvOsdUtils_EXPORTS  -isystem /Library/android-sdks/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles/YuvOsdUtils.dir/src/main/cpp/YuvOsdUtils.c.o   -c /Users/admin/Documents/Work_LJ/YuvWater-master/app/src/main/cpp/YuvOsdUtils.c",
-  "file": "/Users/admin/Documents/Work_LJ/YuvWater-master/app/src/main/cpp/YuvOsdUtils.c"
-}
-]
