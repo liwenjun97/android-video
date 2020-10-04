@@ -1,3 +1,0 @@
-E:/androiddemo/YuvWater-master/YuvWater-master/app/.cxx/cmake/debug/x86/CMakeFiles/edit_cache.dir
-E:/androiddemo/YuvWater-master/YuvWater-master/app/.cxx/cmake/debug/x86/CMakeFiles/YuvOsdUtils.dir
-E:/androiddemo/YuvWater-master/YuvWater-master/app/.cxx/cmake/debug/x86/CMakeFiles/rebuild_cache.dir

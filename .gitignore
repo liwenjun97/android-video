@@ -39,5 +39,5 @@ proguard/
 /.idea/libraries
 /.idea/modules.xml
 /.idea/workspace.xml
-/app/.cxx
+app/.cxx
 

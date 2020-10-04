@@ -1,7 +1,0 @@
-[
-{
-  "directory": "E:/androiddemo/YuvWater-master/YuvWater-master/app/.cxx/cmake/debug/x86_64",
-  "command": "D:\\AndroidSDK\\ndk-bundle\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=x86_64-none-linux-android21 --gcc-toolchain=D:/AndroidSDK/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/AndroidSDK/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/sysroot -DYuvOsdUtils_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\YuvOsdUtils.dir\\src\\main\\cpp\\YuvOsdUtils.c.o   -c E:\\androiddemo\\YuvWater-master\\YuvWater-master\\app\\src\\main\\cpp\\YuvOsdUtils.c",
-  "file": "E:/androiddemo/YuvWater-master/YuvWater-master/app/src/main/cpp/YuvOsdUtils.c"
-}
-]
