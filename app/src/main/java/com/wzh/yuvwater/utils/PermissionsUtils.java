@@ -1,17 +1,16 @@
-package com.zte.vss.common.util;
+package com.wzh.yuvwater.utils;
 
 import android.app.Activity;
 import android.content.pm.PackageManager;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
+
+
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by 杨星10140137 on 2020/1/16.
- */
 public class PermissionsUtils {
     public interface PermissionsListener {
         /**

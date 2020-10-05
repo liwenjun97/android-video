@@ -1,4 +1,4 @@
-package com.wzh.yuvwater;
+package com.wzh.yuvwater.common;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -6,13 +6,14 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.wzh.yuvwater.R;
 import com.wzh.yuvwater.jni.YuvOsdUtils;
 import com.wzh.yuvwater.utils.Logger1;
 import com.wzh.yuvwater.utils.ThreadManager;

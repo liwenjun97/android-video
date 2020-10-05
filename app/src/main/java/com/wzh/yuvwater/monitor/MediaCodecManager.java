@@ -7,8 +7,8 @@ import android.media.MediaFormat;
 import android.os.Build;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.support.annotation.NonNull;
-import android.support.v4.util.Pools;
+import androidx.annotation.NonNull;
+import androidx.core.util.Pools;
 
 import com.wzh.yuvwater.jni.YuvOsdUtils;
 import com.wzh.yuvwater.utils.Logger1;

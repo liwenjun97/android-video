@@ -23,7 +23,7 @@ public class Utils  extends FileUtil{
      */
     public static String getVideoFilePath() {
         String ymd = new SimpleDateFormat("yyyy-MM-dd", Locale.CHINA).format(new Date());
-        String rootFolder = "/sdcard/yuvVideo" + File.separator + ymd;
+        String rootFolder = "/sdcard/VideoBle/Video" + File.separator + ymd;
         FileUtil.mkdirs(rootFolder);
         File folder = new File(rootFolder);
         String pattern = "yyyy-MM-dd HH:mm:ss:SSS";//日期格式
