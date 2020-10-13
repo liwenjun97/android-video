@@ -45,7 +45,6 @@ import android.widget.ToggleButton;
 
 import com.wzh.yuvwater.R;
 import com.wzh.yuvwater.ble.DeviceListAdapter;
-import com.wzh.yuvwater.jdy_touchuang.jdy_Activity;
 import com.wzh.yuvwater.jdy_type.Get_type;
 import com.wzh.yuvwater.utils.PermissionsUtils;
 
@@ -65,6 +64,8 @@ public class DeviceScanActivity extends Activity {
     private boolean mScanning;
     private Handler mHandler;
     private static String TAG = "DeviceScanActivity";
+    public static final String EXTRAS_DEVICE_NAME = "DEVICE_NAME";
+    public static final String EXTRAS_DEVICE_ADDRESS = "DEVICE_ADDRESS";
     private static final int REQUEST_ENABLE_BT = 1;
     // Stops scanning after 10 seconds.
     private static final long SCAN_PERIOD = 5000;
@@ -186,8 +187,8 @@ public class DeviceScanActivity extends Activity {
                                 BluetoothDevice device1 = mDevListAdapter.get_item_dev(position);
                                 if (device1 == null) return;
                                 Intent intent1 = new Intent(DeviceScanActivity.this, MainActivity.class);
-                                intent1.putExtra(jdy_Activity.EXTRAS_DEVICE_NAME, device1.getName());
-                                intent1.putExtra(jdy_Activity.EXTRAS_DEVICE_ADDRESS, device1.getAddress());
+                                intent1.putExtra(EXTRAS_DEVICE_NAME, device1.getName());
+                                intent1.putExtra(EXTRAS_DEVICE_ADDRESS, device1.getAddress());
                                 mDevListAdapter.scan_jdy_ble(false);
                                 mScanning = false;
                                 startActivity(intent1);
