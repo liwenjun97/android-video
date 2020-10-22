@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.wzh.yuvwater">
+    package="com.cqu.ebd">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -19,14 +19,14 @@
         android:roundIcon="@drawable/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".common.MainActivity"
+        <activity android:name="com.cqu.ebd.common.MainActivity"
             android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.NoActionBar">
         </activity>
-        <activity android:name=".common.CreateNumberAct"/>
+        <activity android:name="com.cqu.ebd.common.CreateNumberAct"/>
         <activity
-            android:name="com.wzh.yuvwater.common.DeviceScanActivity"
+            android:name="com.cqu.ebd.common.DeviceScanActivity"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.DeviceDefault.Light"
             >
@@ -38,13 +38,13 @@
         </activity>
 
 
-        <service android:name="com.wzh.yuvwater.ble.BluetoothLeService" android:enabled="true"/>
+        <service android:name="com.cqu.ebd.ble.BluetoothLeService" android:enabled="true"/>
 
 
-        <activity android:name="com.wzh.yuvwater.jdy_touchuang.jdy_Activity" android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity android:name="com.cqu.ebd.jdy_touchuang.jdy_Activity" android:windowSoftInputMode="adjustUnspecified|stateHidden" />
 
 
-        <activity android:name=".common.SetActivity"  />
+        <activity android:name="com.cqu.ebd.common.SetActivity"  />
     </application>
 
 </manifest>
