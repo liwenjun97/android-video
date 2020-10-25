@@ -42,10 +42,18 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
+
 import com.cqu.ebd.R;
 import com.cqu.ebd.ble.DeviceListAdapter;
 import com.cqu.ebd.beans.Get_type;
-import com.cqu.ebd.utils.PermissionsUtils;
+import com.permissionx.guolindev.PermissionX;
+import com.permissionx.guolindev.callback.ExplainReasonCallbackWithBeforeParam;
+import com.permissionx.guolindev.callback.ForwardToSettingsCallback;
+import com.permissionx.guolindev.callback.RequestCallback;
+import com.permissionx.guolindev.request.ExplainScope;
+import com.permissionx.guolindev.request.ForwardScope;
 
 import java.util.List;
 import java.util.Timer;
@@ -54,10 +62,11 @@ import java.util.Timer;
 /**
  * Activity for scanning and displaying available Bluetooth LE devices.
  */
-public class DeviceScanActivity extends Activity {
+public class DeviceScanActivity extends AppCompatActivity {
     // private LeDeviceListAdapter mLeDeviceListAdapter;
     Get_type mGet_type;
     private BluetoothAdapter mBluetoothAdapter;
+    private Activity mContext ;
     private boolean mScanning;
     private Handler mHandler;
     private static String TAG = "DeviceScanActivity";
@@ -67,44 +76,18 @@ public class DeviceScanActivity extends Activity {
     // Stops scanning after 10 seconds.
     private static final long SCAN_PERIOD = 5000;
 
-
     private DeviceListAdapter mDevListAdapter;
     ToggleButton tb_on_off;
     TextView btn_searchDev;
     Button btn_aboutUs;
     ListView lv_bleList;
-
     byte dev_bid;
-
     Timer timer;
-
     String APP_VERTION = "1002";
 
-    private PermissionsUtils.PermissionsListener listener = new PermissionsUtils.PermissionsListener() {
-        @Override
-        public void onGranted() {
 
-        }
-
-        @Override
-        public void onDenied(List<String> permissions) {
-            if (permissions.size() > 0) {
-                Log.e(TAG, "拒绝了权限");
-                requestPermissions();
-            }
-        }
-
-        @Override
-        public void onNoAsk(List<String> permissions) {
-            if (permissions.size() > 0) {
-                Log.e(TAG, "拒绝了权限且不再询问");
-            }
-        }
-    };
 
     private void requestPermissions() {
-        PermissionsUtils utils = new PermissionsUtils(this, listener);
-
         String[] permissions = {
                 Manifest.permission.ACCESS_FINE_LOCATION,
                 Manifest.permission.ACCESS_COARSE_LOCATION,
@@ -113,14 +96,37 @@ public class DeviceScanActivity extends Activity {
                 Manifest.permission.CAMERA
         };
 
-        utils.requestPermissions((String[]) permissions, 1001);
+        PermissionX.init((FragmentActivity) mContext)
+                .permissions(permissions)
+                .onExplainRequestReason(new ExplainReasonCallbackWithBeforeParam() {
+                    @Override
+                    public void onExplainReason(ExplainScope scope, List<String> deniedList, boolean beforeRequest) {
+                        scope.showRequestReasonDialog(deniedList, "即将申请的权限是程序必须依赖的权限", "我已明白");
+                    }
+                })
+                .onForwardToSettings(new ForwardToSettingsCallback() {
+                    @Override
+                    public void onForwardToSettings(ForwardScope scope, List<String> deniedList) {
+                        scope.showForwardToSettingsDialog(deniedList, "您需要去应用程序设置当中手动开启权限", "我已明白");
+                    }
+                })
+                .request(new RequestCallback() {
+                    @Override
+                    public void onResult(boolean allGranted, List<String> grantedList, List<String> deniedList) {
+                        if (allGranted) {
+                            Toast.makeText(DeviceScanActivity.this, "所有申请的权限都已通过", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(DeviceScanActivity.this, "您拒绝了如下权限：" + deniedList, Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.jdy_activity_main);
-
+        mContext = this;
         this.setTitle("BLE无线控制器");
         //getActionBar().setTitle(R.string.title_devices);
         mHandler = new Handler();

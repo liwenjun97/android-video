@@ -28,7 +28,7 @@ char *mNumArrays;
 size_t size;
 
 JNIEXPORT void JNICALL
-Java_com_wzh_yuvwater_jni_YuvOsdUtils_initOsd(JNIEnv *env, jclass type, jint osdOffX,
+Java_com_cqu_ebd_jni_YuvOsdUtils_initOsd(JNIEnv *env, jclass type, jint osdOffX,
                                               jint osdOffY, jint patternLen, jint frameWidth,
                                               jint frameHeight, jint rotation_angle) {
     off_x = osdOffX;
@@ -302,7 +302,7 @@ void printfArr(char *arrs, int width, int height) {
 }
 
 JNIEXPORT void JNICALL
-Java_com_wzh_yuvwater_jni_YuvOsdUtils_addOsd(
+Java_com_cqu_ebd_jni_YuvOsdUtils_addOsd(
         JNIEnv *env, jclass type, jbyteArray yuv_in_data, jbyteArray yvu_out_data,
         jstring date_) {
 
@@ -389,7 +389,7 @@ Java_com_wzh_yuvwater_jni_YuvOsdUtils_addOsd(
 
 
 JNIEXPORT jbyteArray JNICALL
-Java_com_wzh_yuvwater_jni_YuvOsdUtils_argbIntToNV21Byte(JNIEnv *env, jclass jclazz, jintArray ints,
+Java_com_cqu_ebd_jni_YuvOsdUtils_argbIntToNV21Byte(JNIEnv *env, jclass jclazz, jintArray ints,
                                                         jint width, jint height) {
     int frameSize = width * height;
     jint *argb = (*env)->GetIntArrayElements(env, ints, NULL);
@@ -427,7 +427,7 @@ Java_com_wzh_yuvwater_jni_YuvOsdUtils_argbIntToNV21Byte(JNIEnv *env, jclass jcla
 }
 
 JNIEXPORT jbyteArray JNICALL
-Java_com_wzh_yuvwater_jni_YuvOsdUtils_argbIntToNV12Byte(JNIEnv *env, jclass jclazz, jintArray ints,
+Java_com_cqu_ebd_jni_YuvOsdUtils_argbIntToNV12Byte(JNIEnv *env, jclass jclazz, jintArray ints,
                                                         jint width, jint height) {
     int frameSize = width * height;
     jint *argb = (*env)->GetIntArrayElements(env, ints, NULL);
@@ -465,7 +465,7 @@ Java_com_wzh_yuvwater_jni_YuvOsdUtils_argbIntToNV12Byte(JNIEnv *env, jclass jcla
 }
 
 JNIEXPORT jbyteArray JNICALL
-Java_com_wzh_yuvwater_jni_YuvOsdUtils_argbIntToGrayNVByte(JNIEnv *env, jclass jclazz,
+Java_com_cqu_ebd_jni_YuvOsdUtils_argbIntToGrayNVByte(JNIEnv *env, jclass jclazz,
                                                           jintArray ints,
                                                           jint width, jint height) {
     int frameSize = width * height;
@@ -497,7 +497,7 @@ Java_com_wzh_yuvwater_jni_YuvOsdUtils_argbIntToGrayNVByte(JNIEnv *env, jclass jc
 }
 
 JNIEXPORT void JNICALL
-Java_com_wzh_yuvwater_jni_YuvOsdUtils_nv21ToNv12(JNIEnv *env, jclass type, jbyteArray nv21Src_,
+Java_com_cqu_ebd_jni_YuvOsdUtils_nv21ToNv12(JNIEnv *env, jclass type, jbyteArray nv21Src_,
                                                  jbyteArray nv12Dest_, jint width, jint height) {
     jbyte *nv21Src = (*env)->GetByteArrayElements(env, nv21Src_, NULL);
     jbyte *nv12Dest = (*env)->GetByteArrayElements(env, nv12Dest_, NULL);
@@ -516,6 +516,6 @@ Java_com_wzh_yuvwater_jni_YuvOsdUtils_nv21ToNv12(JNIEnv *env, jclass type, jbyte
 }
 
 JNIEXPORT void JNICALL
-Java_com_wzh_yuvwater_jni_YuvOsdUtils_releaseOsd(JNIEnv *env, jclass type) {
+Java_com_cqu_ebd_jni_YuvOsdUtils_releaseOsd(JNIEnv *env, jclass type) {
     free(mNumArrays);
 }
