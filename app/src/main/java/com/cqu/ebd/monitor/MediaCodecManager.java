@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.core.util.Pools;
 
 import com.cqu.ebd.jni.YuvOsdUtils;
-import com.cqu.ebd.utils.Logger1;
+import com.cqu.ebd.utils.Log;
 
 import java.nio.ByteBuffer;
 import java.text.SimpleDateFormat;
@@ -56,7 +56,7 @@ class MediaCodecManager {
     private Pools.SimplePool<MuxerData> mPools;
 
     private MediaCodecManager() {
-        Logger1.i(TAG,"MediaCodecManager Create");
+        Log.i(TAG,"MediaCodecManager Create");
         mHandlerThread = new HandlerThread("codecThread");
         mHandlerThread.start();
         mHandler = new Handler(mHandlerThread.getLooper());
@@ -66,7 +66,7 @@ class MediaCodecManager {
         if (sInstance == null) {
             synchronized (MediaCodecManager.class) {
                 if (sInstance == null)
-                    Logger1.i(TAG,"MediaCodecManager getInstance");
+                    Log.i(TAG,"MediaCodecManager getInstance");
                     sInstance = new MediaCodecManager();
             }
         }
@@ -82,7 +82,7 @@ class MediaCodecManager {
     public void initCodecManager(int dstWidth, int dstHeight, int rotation) {
         isFlush = false;
         if (!isInitCodec) {
-            Logger1.i(TAG, "initCodecManager: width=%s*%s rotation=%s", dstWidth, dstHeight, rotation);
+            Log.i(TAG,String.format("initCodecManager: width=%s*%s rotation=%s", dstWidth, dstHeight, rotation));
             mHandler.post(() -> {
                 mMuxerManager = MuxerManager.getInstance();
 
@@ -110,7 +110,7 @@ class MediaCodecManager {
      */
     public void startMediaCodec() {
         if (isStart) {
-            Logger1.i(TAG, "startMediaCodec: was started--------");
+            Log.i(TAG, "startMediaCodec: was started--------");
             return;
         }
         mHandler.post(() -> {
@@ -123,7 +123,7 @@ class MediaCodecManager {
      */
     public void pauseMediaCodec() {
         if (!isStart || isPause) {
-            Logger1.i(TAG, "MediaCodec: isn't started");
+            Log.i(TAG, "MediaCodec: isn't started");
             return;
         }
         isPause=true;
@@ -137,7 +137,7 @@ class MediaCodecManager {
      */
     public void resumeMediaCodec() {
         if (!isStart || !isPause) {
-            Logger1.i(TAG, "MediaCodec: was started");
+            Log.i(TAG, "MediaCodec: was started");
             return;
         }
         isPause=false;
@@ -145,12 +145,12 @@ class MediaCodecManager {
     }
 
     public void releaseManager() {
-        Logger1.i(TAG,"releaseManager");
+        Log.i(TAG,"releaseManager");
         Thread th = new Thread(new Runnable() {
             @Override
             public void run() {
                 if (mMediaCodec != null) {
-                    Logger1.i(TAG, "releaseManager----3");
+                    Log.i(TAG, "releaseManager----3");
                     frameBytes.clear();
                     YuvOsdUtils.releaseOsd();
                     stopMediaCodec();
@@ -165,7 +165,7 @@ class MediaCodecManager {
     public void addFrameData(byte[] data) {
         if (isStart && !isPause) {
             boolean isOffer = frameBytes.offer(data);
-//            Logger1.i(TAG, "addFrameData: isOffer=%s", isOffer);
+//            Log.i(TAG, "addFrameData: isOffer=%s", isOffer);
             if (!isOffer) {
                 frameBytes.poll();
                 frameBytes.offer(data);
@@ -197,7 +197,7 @@ class MediaCodecManager {
         mediaFormat.setInteger(MediaFormat.KEY_FRAME_RATE, frameRate);
         mediaFormat.setInteger(MediaFormat.KEY_COLOR_FORMAT, mColorFormat);
         mediaFormat.setInteger(MediaFormat.KEY_I_FRAME_INTERVAL, 1);
-        Logger1.d(TAG, "prepare format: " + mediaFormat);
+        Log.d(TAG, "prepare format: " + mediaFormat);
     }
 
     byte[] outData;
@@ -206,11 +206,11 @@ class MediaCodecManager {
         if (!isInitCodec)
             throw new RuntimeException("initCodec is false,please call initCodecManager() before");
         if (isStart) {
-            Logger1.i(TAG, "startMediaCodec: was started");
+            Log.i(TAG, "startMediaCodec: was started");
             return;
         }
         try {
-            Logger1.i(TAG, "startMediaCodec: starting");
+            Log.i(TAG, "startMediaCodec: starting");
 
             mMediaCodec = MediaCodec.createEncoderByType(MIME_TYPE);
             mMediaCodec.configure(mediaFormat, null, null,
@@ -231,7 +231,7 @@ class MediaCodecManager {
                         return;
                     }
 
-//                    Logger1.i(TAG, "onInputBufferAvailable: %s index=%d frameLen=%s", Thread.currentThread(), index, data == null ? "null" : "" + data.length);
+//                    Log.i(TAG, "onInputBufferAvailable: %s index=%d frameLen=%s", Thread.currentThread(), index, data == null ? "null" : "" + data.length);
 
                     ByteBuffer inputBuffer = codec.getInputBuffer(index);
                     if (inputBuffer == null)
@@ -242,7 +242,7 @@ class MediaCodecManager {
 
                         YuvOsdUtils.addOsd(data, outData, date);
 //                        long time=SystemClock.uptimeMillis()-start;
-//                        Logger1.d(TAG,"time="+time+" ms");
+//                        Log.d(TAG,"time="+time+" ms");
                     } else {
                         YuvOsdUtils.NV21ToNV12(data, dstWidth, dstHeight);
                     }
@@ -253,7 +253,7 @@ class MediaCodecManager {
                     long currentTimeUs = (System.nanoTime()-mTime) / 1000;//通过控制时间轴，达到暂停录制，继续录制的效果
 
                     codec.queueInputBuffer(index, 0, outData.length, currentTimeUs, 0);
-//                    Logger1.i(TAG, "onInputBufferAvailable: currentTimeUs=%s ", currentTimeUs);
+//                    Log.i(TAG, "onInputBufferAvailable: currentTimeUs=%s ", currentTimeUs);
 
                 }
 
@@ -261,7 +261,7 @@ class MediaCodecManager {
                 public void onOutputBufferAvailable(@NonNull MediaCodec codec, int index, @NonNull MediaCodec.BufferInfo info) {
 
                     ByteBuffer outputBuffer = codec.getOutputBuffer(index);
-//                    Logger1.i(TAG, "onOutputBufferAvailable: %s flag=%s timeus=%s", outputBuffer, info.flags, info.presentationTimeUs);
+//                    Log.i(TAG, "onOutputBufferAvailable: %s flag=%s timeus=%s", outputBuffer, info.flags, info.presentationTimeUs);
 
                     if (!isHasKeyFrame && info.flags == MediaCodec.BUFFER_FLAG_KEY_FRAME) {
                         isHasKeyFrame = true;
@@ -270,16 +270,16 @@ class MediaCodecManager {
                         return;
                     else if (info.presentationTimeUs < lastPauseTime || !isHasKeyFrame) {//上一视频的数据，或者无关键帧，丢弃
                         //视频第一帧一定要是关键帧
-                        Logger1.i(TAG, "onOutputBufferAvailable: discard %s time=%s", isHasKeyFrame, info.presentationTimeUs);
+                        Log.i(TAG, String.format("onOutputBufferAvailable: discard %s time=%s", isHasKeyFrame, info.presentationTimeUs));
                     } else if ((info.flags & MediaCodec.BUFFER_FLAG_CODEC_CONFIG) != 0) {
-                        Logger1.d(TAG, "ignoring BUFFER_FLAG_CODEC_CONFIG");
+                        Log.d(TAG, "ignoring BUFFER_FLAG_CODEC_CONFIG");
                     } else {
                         outputBuffer.position(info.offset);
                         outputBuffer.limit(info.offset + info.size);
 
                         MuxerData muxerData=mPools.acquire();
                         if(muxerData==null){
-                            Logger1.d(TAG,"muxerData==null");
+                            Log.d(TAG,"muxerData==null");
                             muxerData=new MuxerData();
                         }
                         muxerData.trackIndex=MuxerManager.TRACK_VIDEO;
@@ -299,7 +299,7 @@ class MediaCodecManager {
                 @Override
                 public void onOutputFormatChanged(@NonNull MediaCodec codec, @NonNull MediaFormat format) {
                     MediaFormat newFormat = mMediaCodec.getOutputFormat();
-//                    Logger1.i(TAG, "添加视轨  " + newFormat.toString());
+//                    Log.i(TAG, "添加视轨  " + newFormat.toString());
                     mMuxerManager.sendAddTrack(MuxerManager.TRACK_VIDEO, newFormat);
                 }
             }, mHandler);
@@ -314,7 +314,7 @@ class MediaCodecManager {
      * 返回到接收数据状态
      */
     public synchronized void flushMediaCodec() {
-        Logger1.i(TAG, "flushMediaCodec");
+        Log.i(TAG, "flushMediaCodec");
         frameBytes.clear();
         isFlush = true;
         lastPauseTime = (System.nanoTime()) / 1000;//记录
@@ -331,7 +331,7 @@ class MediaCodecManager {
         }
         isStart = false;
         isPause=true;
-        Logger1.i(TAG, "stopMediaCodec video");
+        Log.i(TAG, "stopMediaCodec video");
     }
 
     private int getIndex(char c) {

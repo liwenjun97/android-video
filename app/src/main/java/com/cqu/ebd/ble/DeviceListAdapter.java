@@ -12,7 +12,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +21,7 @@ import android.widget.TextView;
 
 import com.cqu.ebd.R;
 import com.cqu.ebd.beans.JDY_type;
+import com.cqu.ebd.utils.Log;
 
 //import com.example.jdy_type.Get_type;
 

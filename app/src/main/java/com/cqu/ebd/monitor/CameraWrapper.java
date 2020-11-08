@@ -6,7 +6,7 @@ import android.hardware.Camera;
 import android.view.Surface;
 import android.view.SurfaceView;
 
-import com.cqu.ebd.utils.Logger1;
+import com.cqu.ebd.utils.Log;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -64,7 +64,7 @@ public class CameraWrapper {
     }
 
     public boolean doOpenCamera(SurfaceView surfaceView) {
-        Logger1.i(TAG, "Camera open.... openCameraId=%s", openCameraId);
+        Log.i(TAG, String.format("Camera open.... openCameraId=%s", openCameraId));
         if (openCameraId == -1)
             throw new RuntimeException("openCameraId is -1");
 
@@ -72,7 +72,7 @@ public class CameraWrapper {
             mCamera = Camera.open(openCameraId);
         } catch (Exception e) {
             e.printStackTrace();
-            Logger1.i(TAG, "doOpenCamera: open fail %s %s", openCameraId, e);
+            Log.i(TAG, String.format("doOpenCamera: open fail %s %s", openCameraId, e));
             return false;
         }
 
@@ -84,10 +84,10 @@ public class CameraWrapper {
         mCamera.setErrorCallback(new Camera.ErrorCallback() {
             @Override
             public void onError(int error, Camera camera) {
-                Logger1.e(TAG, "onError: %s", error);
+                Log.e(TAG, String.format("onError: %s", error));
             }
         });
-        Logger1.i(TAG, "Camera open over....");
+        Log.i(TAG, "Camera open over....");
         return initCamera();
     }
 
@@ -96,7 +96,7 @@ public class CameraWrapper {
      */
     public void startPreview() {
         if (!mIsInitSuccess) {
-            Logger1.e(TAG, "camera InitSuccess is false");
+            Log.e(TAG, "camera InitSuccess is false");
             return;
         }
         if (!mIsPreviewing) {
@@ -109,9 +109,9 @@ public class CameraWrapper {
 
             mIsPreviewing = true;
 
-            Logger1.d(TAG, "camera startPreview");
+            Log.d(TAG, "camera startPreview");
         } else {
-            Logger1.e(TAG, "camera mIsPreviewing is true");
+            Log.e(TAG, "camera mIsPreviewing is true");
         }
     }
 
@@ -120,7 +120,7 @@ public class CameraWrapper {
      */
     public void pausePreview() {
         if (!mIsInitSuccess) {
-            Logger1.e(TAG, "camera InitSuccess is false");
+            Log.e(TAG, "camera InitSuccess is false");
             return;
         }
         if (mIsPreviewing) {
@@ -129,9 +129,9 @@ public class CameraWrapper {
             mIsPreviewing = false;
             CameraWrapper.getInstance().stopRecording();
 
-            Logger1.d(TAG, "camera stopPreview");
+            Log.d(TAG, "camera stopPreview");
         } else {
-            Logger1.d(TAG, "camera mIsPreviewing is false");
+            Log.d(TAG, "camera mIsPreviewing is false");
         }
     }
 
@@ -143,7 +143,7 @@ public class CameraWrapper {
      * 释放camera 资源
      */
     public void releaseCamera() {
-        Logger1.i(TAG, "doStopCamera");
+        Log.i(TAG, "doStopCamera");
         if (this.mCamera != null) {
             stopRecording();
             MuxerManager.getInstance().releaseManager();
@@ -164,7 +164,7 @@ public class CameraWrapper {
             List<Camera.Size> sizes = mCameraParamters.getSupportedPreviewSizes();
             if (DEBUG) {
                 for (Camera.Size size : this.mCameraParamters.getSupportedPreviewSizes()) {
-                    Logger1.d(TAG, "support preview width=" + size.width + "," + size.height);
+                    Log.d(TAG, "support preview width=" + size.width + "," + size.height);
                 }
             }
             this.mCameraParamters.setPreviewFormat(ImageFormat.NV21);
@@ -174,27 +174,27 @@ public class CameraWrapper {
 
             Camera.Parameters parameters = mCamera.getParameters();
             Camera.Size sz = parameters.getPreviewSize();
-            Logger1.i(TAG, "camera width : " + sz.width + "  height  : " + sz.height);
+            Log.i(TAG, "camera width : " + sz.width + "  height  : " + sz.height);
             int bufSize = sz.width * sz.height * 3 / 2;
             mCamera.addCallbackBuffer(new byte[bufSize]);
 
             if (DEBUG) {
 
-                Logger1.d(TAG, "getMaxNumDetectedFaces =" + this.mCameraParamters.getSupportedVideoSizes());
-                Logger1.d(TAG, "getMaxNumDetectedFaces =" + this.mCameraParamters.getMaxNumDetectedFaces());
-                Logger1.d(TAG, "getMaxNumFocusAreas =" + this.mCameraParamters.getMaxNumFocusAreas());
-                Logger1.d(TAG, "getMaxNumMeteringAreas =" + this.mCameraParamters.getMaxNumMeteringAreas());
+                Log.d(TAG, "getMaxNumDetectedFaces =" + this.mCameraParamters.getSupportedVideoSizes());
+                Log.d(TAG, "getMaxNumDetectedFaces =" + this.mCameraParamters.getMaxNumDetectedFaces());
+                Log.d(TAG, "getMaxNumFocusAreas =" + this.mCameraParamters.getMaxNumFocusAreas());
+                Log.d(TAG, "getMaxNumMeteringAreas =" + this.mCameraParamters.getMaxNumMeteringAreas());
                 int[] range = new int[2];
                 this.mCameraParamters.getPreviewFpsRange(range);
-                Logger1.d(TAG, "getPreviewFpsRange =" + Arrays.toString(range));
+                Log.d(TAG, "getPreviewFpsRange =" + Arrays.toString(range));
                 List<int[]> fps = this.mCameraParamters.getSupportedPreviewFpsRange();
                 if (fps != null)
                     for (int[] f : fps) {
-                        Logger1.i(TAG, "initCamera: fps %s", Arrays.toString(f));
+                        Log.i(TAG,String.format("initCamera: fps %s", Arrays.toString(f)) );
                     }
 
-                Logger1.d(TAG, "getSupportedPreviewFormats =" + this.mCameraParamters.getSupportedPreviewFormats());
-                Logger1.d(TAG, "getSupportedSceneModes =" + this.mCameraParamters.getSupportedSceneModes());
+                Log.d(TAG, "getSupportedPreviewFormats =" + this.mCameraParamters.getSupportedPreviewFormats());
+                Log.d(TAG, "getSupportedSceneModes =" + this.mCameraParamters.getSupportedSceneModes());
 
             }
 
@@ -212,7 +212,7 @@ public class CameraWrapper {
                 new android.hardware.Camera.CameraInfo();
         android.hardware.Camera.getCameraInfo(cameraId, cameraInfo);
         int rotation = mContext.getWindowManager().getDefaultDisplay().getRotation();
-        Logger1.i(TAG,"--->"+rotation);
+        Log.i(TAG,"--->"+rotation);
         int degrees = 0;
         switch (rotation) {
             case Surface.ROTATION_0:
@@ -235,7 +235,7 @@ public class CameraWrapper {
         } else {  // back-facing
             result = (cameraInfo.orientation - degrees + 360) % 360;
         }
-        Logger1.i(TAG,"--->result"+result);
+        Log.i(TAG,"--->result"+result);
         return result;
     }
     /**
@@ -245,7 +245,7 @@ public class CameraWrapper {
     public void startRecording(String filePath) {
         startRecordingFlag = true;
         if (DEBUG)
-            Logger1.i(TAG, "startRecording: %s %s", startRecordingFlag, filePath);
+            Log.i(TAG, String.format("startRecording: %s %s", startRecordingFlag, filePath));
         MuxerManager.getInstance().reStartMuxer(filePath);
         mCamera.startPreview();
     }
@@ -271,7 +271,7 @@ public class CameraWrapper {
     public void stopRecording() {
         startRecordingFlag = false;
         mCamera.stopPreview();
-        Logger1.i(TAG, "stopRecording: %s", startRecordingFlag);
+        Log.i(TAG, String.format("stopRecording: %s", startRecordingFlag));
 
         MuxerManager.getInstance().stopMuxer();
     }
@@ -285,7 +285,7 @@ public class CameraWrapper {
         @Override
         public void onPreviewFrame(byte[] data, Camera camera) {
 //            if (DEBUG)
-//                Logger1.i(TAG, "onPreviewFrame: %s t=%s", data.length, Thread.currentThread());
+//                Log.i(TAG, "onPreviewFrame: %s t=%s", data.length, Thread.currentThread());
             //当启动录制的视频把视频源数据加入编码中
             MuxerManager.getInstance().addVideoFrameData(data);
             camera.addCallbackBuffer(data);

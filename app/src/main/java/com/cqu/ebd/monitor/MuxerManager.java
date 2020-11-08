@@ -7,7 +7,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.text.TextUtils;
 
-import com.cqu.ebd.utils.Logger1;
+import com.cqu.ebd.utils.Log;
 
 import java.io.IOException;
 
@@ -62,11 +62,11 @@ class MuxerManager {
             case MSG_ADD_MUXER_DATA:
                 try {
                     MuxerData data = (MuxerData) msg.obj;
-//                    Logger1.d(TAG, "写入混合数据 " + data.bufferInfo.size);
+//                    Log.d(TAG, "写入混合数据 " + data.bufferInfo.size);
                     mediaMuxer.writeSampleData(videoTrackIndex, data.byteBuf, data.bufferInfo);
                     MediaCodecManager.getInstance().releaseMuxerData(data);
                 } catch (Exception e) {
-                    Logger1.e(TAG, "写入混合数据失败!" + e.toString());
+                    Log.e(TAG, "写入混合数据失败!" + e.toString());
                 }
                 break;
             case MSG_STOP_MUXER:
@@ -171,7 +171,7 @@ class MuxerManager {
     }
 
     private void readyStart(String filePath) throws IOException {
-        Logger1.d(TAG, "readyStart start path=%s",filePath);
+        Log.d(TAG, "readyStart start path=%s"+filePath);
 
         isVideoTrackAdd = false;
 
@@ -180,7 +180,7 @@ class MuxerManager {
         MediaCodecManager.getInstance().initCodecManager(CameraWrapper.SRC_VIDEO_WIDTH,
                 CameraWrapper.SRC_VIDEO_HEIGHT,0);
         MediaCodecManager.getInstance().startMediaCodec();
-        Logger1.d(TAG, "readyStart end ");
+        Log.d(TAG, "readyStart end ");
     }
 
 
@@ -195,9 +195,9 @@ class MuxerManager {
                 mediaMuxer.start();
 
                 isVideoTrackAdd = true;
-                Logger1.d(TAG, "添加视轨 完成");
+                Log.d(TAG, "添加视轨 完成");
             } catch (Exception e) {
-                Logger1.e(TAG, "addTrack 异常:" + e.toString());
+                Log.e(TAG, "addTrack 异常:" + e.toString());
             }
         }
     }
@@ -211,30 +211,30 @@ class MuxerManager {
      * create at 2017/3/22 17:59
      */
     private void releaseMuxer() {
-        Logger1.d(TAG, "releaseMuxer start " + mediaMuxer);
+        Log.d(TAG, "releaseMuxer start " + mediaMuxer);
         if (mediaMuxer != null) {
             MediaCodecManager.getInstance().releaseManager();
             try {
                 mediaMuxer.release();
             } catch (Exception e) {
-                Logger1.e(TAG, "mediaMuxer.release() 异常:" + e.toString());
+                Log.e(TAG, "mediaMuxer.release() 异常:" + e.toString());
             }
             mediaMuxer = null;
             mHandler.removeCallbacksAndMessages(null);
         }
-        Logger1.d(TAG, "releaseMuxer end ");
+        Log.d(TAG, "releaseMuxer end ");
 
     }
 
     public void releaseManager() {
-        Logger1.i(TAG, "releaseManager: start");
+        Log.i(TAG, "releaseManager: start");
         releaseMuxer();
         MediaCodecManager.getInstance().releaseManager();
 
         sInstance = null;
         mHandlerThread.quit();
         mHandler=null;
-        Logger1.i(TAG, "releaseManager: end");
+        Log.i(TAG, "releaseManager: end");
 
     }
 

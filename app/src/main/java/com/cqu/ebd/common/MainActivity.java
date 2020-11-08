@@ -18,7 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.IBinder;
 import android.os.Message;
-import android.util.Log;
+
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -40,7 +40,8 @@ import com.cqu.ebd.R;
 import com.cqu.ebd.ble.BluetoothLeService;
 import com.cqu.ebd.monitor.CameraWrapper;
 import com.cqu.ebd.utils.FileUtil;
-import com.cqu.ebd.utils.Logger1;
+import com.cqu.ebd.utils.Log;
+import com.cqu.ebd.utils.Log;
 import com.cqu.ebd.utils.Utils;
 
 import java.io.File;
@@ -243,7 +244,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        Logger1.i(TAG,"onConfigurationChanged");
+        Log.i(TAG,"onConfigurationChanged");
         initCamera(false);
     }
 
@@ -261,7 +262,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Display display = getWindowManager().getDefaultDisplay();
         int screenW = rlRoot.getWidth();
         int screenH = rlRoot.getHeight();
-        Logger1.d("TAG", "changeSurfaceView" + screenW + "*" + screenH);
+        Log.d("TAG", "changeSurfaceView" + screenW + "*" + screenH);
         if (isPort) {
             float scaleW = (float) screenW / CameraWrapper.SRC_VIDEO_HEIGHT;
             float scaleH = (float) screenH / CameraWrapper.SRC_VIDEO_WIDTH;
@@ -723,7 +724,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 if(data.contains("$")){
                     //只需要输出的前四位数据
-                    Log.d(TAG,"需要写入文件");
                     Pattern pattern = Pattern.compile(",");
                     Matcher findMatcher = pattern.matcher(data);
                     int number = 0;
@@ -736,7 +736,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     int start = findMatcher.start();
 
                     String substring = data.substring(1, start);
-                    Log.i(TAG,"截取后的输出:"+substring);
+                    Log.d(TAG,"截取后的输出:"+substring);
                     FileUtil.writeTextToFile(substring,bleLogFile);
                 }
 

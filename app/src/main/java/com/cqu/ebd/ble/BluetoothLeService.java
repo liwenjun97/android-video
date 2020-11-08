@@ -38,9 +38,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Binder;
 import android.os.IBinder;
-import android.util.Log;
+
 
 import com.cqu.ebd.R;
+import com.cqu.ebd.utils.Log;
 
 
 /**

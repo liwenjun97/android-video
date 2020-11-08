@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 
 import com.cqu.ebd.R;
 import com.cqu.ebd.jni.YuvOsdUtils;
-import com.cqu.ebd.utils.Logger1;
+import com.cqu.ebd.utils.Log;
 import com.cqu.ebd.utils.ThreadManager;
 
 import java.util.Arrays;
@@ -77,7 +77,7 @@ public class CreateNumberAct extends AppCompatActivity {
 
                         byte[] nv12 = YuvOsdUtils.bitmapToGrayNV(srcBit, w, h);
 
-                        Logger1.i(TAG, "onClick: length=%s w*h=%s w=%s h=%s", nv12.length, w * h, w, h);
+                        Log.i(TAG,String.format("onClick: length=%s w*h=%s w=%s h=%s", nv12.length, w * h, w, h) );
                         StringBuilder sb = new StringBuilder();
                         for (int j = 0; j < h; j++) {
                             String line = "";
@@ -92,7 +92,7 @@ public class CreateNumberAct extends AppCompatActivity {
                             }
                             sb.append(line + "\n");
                         }
-                        Logger1.i(TAG, "onClick: \n%s", sb);
+                        Log.i(TAG, String.format("onClick: \n%s", sb));
 
 
                        /* List<Byte> bytes=new ArrayList<>(100);
@@ -119,13 +119,13 @@ public class CreateNumberAct extends AppCompatActivity {
                         if(blackNum!=-1){
                             bytes.add(blackNum);
                         }
-                        Logger1.i(TAG, "onClick: c=%s newLen=%d %s",content,bytes.size(), bytes);
+                        Log.i(TAG, "onClick: c=%s newLen=%d %s",content,bytes.size(), bytes);
 */
-                        Logger1.i(TAG, "onClick: c=%s len=%d %s", content, nv12.length, Arrays.toString(nv12));
+                        Log.i(TAG, String.format("onClick: c=%s len=%d %s", content, nv12.length, Arrays.toString(nv12)));
 
                         map.put(content, nv12);
 
-//                        Logger1.i(TAG, "initBase: len=%s==%s char=%s %s", w * h * 3 / 2, nv12.length, content, Arrays.toString(nv12));
+//                        Log.i(TAG, "initBase: len=%s==%s char=%s %s", w * h * 3 / 2, nv12.length, content, Arrays.toString(nv12));
 
                     }
 
@@ -135,7 +135,7 @@ public class CreateNumberAct extends AppCompatActivity {
 
                     byte[] nv12 = YuvOsdUtils.bitmapToGrayNV(srcBit, w, h);
 
-                    Logger1.i(TAG, "onClick: length=%s whites=%s", nv12.length, Arrays.toString(nv12));
+                    Log.i(TAG,String.format("onClick: length=%s whites=%s", nv12.length, Arrays.toString(nv12)) );
                 });
 
             }

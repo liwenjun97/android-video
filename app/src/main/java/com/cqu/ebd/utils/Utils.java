@@ -27,7 +27,7 @@ public class Utils  extends FileUtil{
         String pattern = "yyyy-MM-dd HH:mm:ss:SSS";//日期格式
         SimpleDateFormat mFormat = new SimpleDateFormat(pattern, Locale.CHINA);
         String date = mFormat.format(new Date());
-        Logger1.i(TAG, "date: ",date);
+        Log.i(TAG, String.format("date: ",date));
 
         String newVideoPath = null;
         if (folder.exists()) {

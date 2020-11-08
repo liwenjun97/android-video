@@ -29,7 +29,7 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
+
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -48,6 +48,8 @@ import androidx.fragment.app.FragmentActivity;
 import com.cqu.ebd.R;
 import com.cqu.ebd.ble.DeviceListAdapter;
 import com.cqu.ebd.beans.Get_type;
+import com.cqu.ebd.utils.Log;
+import com.cqu.ebd.utils.LogWrite;
 import com.permissionx.guolindev.PermissionX;
 import com.permissionx.guolindev.callback.ExplainReasonCallbackWithBeforeParam;
 import com.permissionx.guolindev.callback.ForwardToSettingsCallback;
@@ -128,6 +130,12 @@ public class DeviceScanActivity extends AppCompatActivity {
         setContentView(R.layout.jdy_activity_main);
         mContext = this;
         this.setTitle("BLE无线控制器");
+
+        //日志相关设置
+        Log.setLogLevel(LogWrite.LEVEL_INFO);
+        android.util.Log.i(TAG,"============日志路径============"+Log.getFilePath());
+
+
         //getActionBar().setTitle(R.string.title_devices);
         mHandler = new Handler();
 
@@ -186,7 +194,7 @@ public class DeviceScanActivity extends AppCompatActivity {
                         switch (mDevListAdapter.get_item_type(position)) {
                             case JDY:////为标准透传模块
                             {
-                                Log.i(TAG, "标准透传模块");
+                                Log.d(TAG, "标准透传模块");
                                 BluetoothDevice device1 = mDevListAdapter.get_item_dev(position);
                                 if (device1 == null) return;
                                 Intent intent1 = new Intent(DeviceScanActivity.this, MainActivity.class);
@@ -199,28 +207,28 @@ public class DeviceScanActivity extends AppCompatActivity {
                             }
                             case JDY_iBeacon:////为iBeacon设备
                             {
-                                Log.i(TAG, "为iBeacon设备");
+                                Log.d(TAG, "为iBeacon设备");
 
                             }
                             case sensor_temp://温度传感器
                             {
 
-                                Log.i(TAG, "为iBeacon设备");
+                                Log.d(TAG, "为iBeacon设备");
                                 break;
                             }
                             case JDY_KG://开关控制APP
                             {
-                                Log.i(TAG, "开关控制APP");
+                                Log.d(TAG, "开关控制APP");
                                 break;
                             }
                             case JDY_KG1://开关控制APP
                             {
-                                Log.i(TAG, "开关控制APP2");
+                                Log.d(TAG, "开关控制APP2");
                                 break;
                             }
                             case JDY_AMQ://massager 按摩器APP
                             {
-                                Log.i(TAG, "按摩器APP");
+                                Log.d(TAG, "按摩器APP");
                                 break;
                             }
                             case JDY_LED1:// LED灯 APP 测试版本
@@ -283,7 +291,7 @@ public class DeviceScanActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.scan_menu, menu);
 
         menu.findItem(R.id.scan_menu_set).setVisible(true);
-        menu.findItem(R.id.scan_menu_id).setActionView(null);
+        //menu.findItem(R.id.scan_menu_id).setActionView(null);
 
         return true;
     }
@@ -292,10 +300,7 @@ public class DeviceScanActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.scan_menu_set:
-                //mDevListAdapter.clear();
-                //mDevListAdapter.scan_jdy_ble( true );
                 Intent intent1 = new Intent(DeviceScanActivity.this, SetActivity.class);
-                ;
                 startActivity(intent1);
                 break;
             case R.id.scan_menu_set1: {
@@ -309,7 +314,6 @@ public class DeviceScanActivity extends AppCompatActivity {
 
     private void scanLeDevice(final boolean enable) {
         if (enable) {
-            // Stops scanning after a pre-defined scan period.
             mHandler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -332,8 +336,6 @@ public class DeviceScanActivity extends AppCompatActivity {
     protected void onResume() {//打开APP时扫描设备
         super.onResume();
         scanLeDevice(true);
-
-        //mDevListAdapter.scan_jdy_ble( false );
     }
 
     @Override
